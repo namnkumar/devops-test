@@ -1,0 +1,16 @@
+version: '2'
+services:
+  db:
+    image: mongo
+    ports:
+     - "27017:27017"
+    volumes:
+     - /data/db
+  web:
+    # image: namitakumar/mydemoapp
+    build: .
+    command: npm start
+    ports:
+     - "3000:3000"
+    depends_on:
+     - db
