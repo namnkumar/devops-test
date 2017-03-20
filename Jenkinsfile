@@ -5,8 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building docker image ..'
-                docker build -t devops-container
-
+                sh 'docker build -t devops-container'
             }
         }
         stage('Test') {
@@ -17,7 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                
+
             }
         }
     }
