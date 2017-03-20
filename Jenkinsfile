@@ -1,15 +1,15 @@
 node {
 
     stage('Build') {
-            echo 'Building docker image ..'
-            sh "docker build -t devops-container ."
+        echo 'Building docker image ..'
+        sh "docker build -t devops-container ."
     }
     stage('Test') {
-            echo 'Testing..'
+        echo 'Testing..'
     }
     stage('Deploy') {
-            echo 'Deploying....'
-
+        echo 'Deploying docker image....'
+        sh "docker run -p 8081:8081 devops-container"
     }
 
 }
