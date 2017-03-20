@@ -1,5 +1,5 @@
 node {
-  	 stages {
+
           stage('Build') {
               steps {
                   echo 'Building docker image ..'
@@ -17,5 +17,5 @@ node {
 
               }
           }
-      }    
+        
 }
